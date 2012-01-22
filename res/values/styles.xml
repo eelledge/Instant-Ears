@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>   
+<!-- Activity Styles --> 
+  <!-- Layout Table with 4 columns -->
+	<style name = "LayoutTableMain">
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:stretchColumns">0,1,2,3,4,5,6,7</item>
+		<item name="android:weightSum">1.0</item>
+		<item name="android:background">@color/LightGray</item>
+	</style>
+  <!-- Setup the Title Area. This is the same on ALL Activities -->
+  	<style name = "TitleRow">
+		<item name="android:paddingTop">10dp</item>
+		<item name="android:paddingBottom">5dp</item>
+	</style>
+	<style name = "TitleCaption">
+		<item name="android:background">@drawable/title</item>
+		<item name="android:layout_column">0</item>		
+		<item name="android:layout_span">7</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:scaleType">fitXY</item>
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_marginTop">2dp</item>
+		<item name="android:layout_marginLeft">10dp</item>
+		<item name="android:layout_marginRight">10dp</item>
+		<item name="android:layout_marginBottom">2dp</item>		
+	</style>
+	<style name = "TitleLogo">
+		<item name="android:src">@drawable/ielogo</item>
+		<item name="android:clickable">true</item>
+		<item name="android:layout_column">3</item>		
+		<item name="android:onClick">imgLogo_OnClick</item>
+		<item name="android:layout_gravity">right</item>
+		<item name="android:layout_height">32dp</item>
+		<item name="android:layout_width">32dp</item>		
+	</style>
+		
+  <!-- Setup the Screen Caption. This will show the Screen Caption for each Activity-->
+	<style name = "ScreenCaptionRow">
+		<item name="android:paddingBottom">5dp</item>
+	</style>
+	<style name = "ScreenCaption">
+		<item name="android:id">@+id/tblScreenCaption</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:layout_column">0</item>		
+		<item name="android:layout_span">8</item>
+		<item name="android:layout_gravity">center</item>
+		<item name="android:textSize">14dp</item>
+		<item name="android:textColor">@color/black</item>
+	</style>
+	<style name = "ScreenTitle">
+	 	<item name="android:textSize">45sp</item>       
+	 	<item name="android:textColor">@color/blue</item>
+	 	<item name="android:textStyle">bold</item>
+	 	<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_width">fill_parent</item>
+	 </style>
+	
+	<style name = "SplashScreen">
+		<item name="android:padding">0dp</item>
+	    <item name="android:windowBackground">@color/white</item>
+	    <item name="android:windowFrame">@null</item>    
+	 </style>
+	
+	<style name = "RatingBars">
+	 	<item name = "android:stepSize">.5</item>
+	 	<item name = "android:background">@color/black</item>
+ 	</style>
+	<style name = "AppProvidedData">
+	 	<item name="android:textSize">16sp</item>       
+	 	<item name="android:textColor">@color/blue</item>
+	 	<item name="android:textStyle">bold</item>
+	 	<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_width">fill_parent</item>
+	</style>
+	<style name = "AppProvidedDataBig">
+	 	<item name="android:textSize">18sp</item>       
+	 	<item name="android:textColor">@color/LightBlue</item>
+	 	<item name="android:textStyle">bold</item>
+	 	<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_width">fill_parent</item>
+	</style>
+	<style name = "UserInput">
+	 	<item name="android:textSize">16sp</item>       
+	 	<item name="android:textColor">@color/SlateBlue</item>
+	 	<item name="android:textStyle">bold</item>
+	 	<item name = "android:height">20dip</item>
+	 </style>
+	<style name = "BusinessName">
+		<item name="android:textSize">18sp</item>       
+		<item name="android:textColor">@color/SlateBlue</item>
+		<item name="android:textStyle">bold</item>
+		<item name = "android:height">20dip</item>
+	</style>
+	<style name = "RadioButton">
+		<item name="android:textSize">18sp</item>       
+		<item name="android:textColor">@color/LightBlue2</item>
+		<item name="android:textStyle">bold</item>
+		<item name = "android:height">50dip</item>
+	</style>
+	<style name = "Questions">
+		<item name="android:textSize">24sp</item>       
+		<item name="android:textColor">@color/LightBlue1</item>
+		<item name="android:textStyle">bold</item>
+		<item name = "android:height">30dip</item>
+	</style>
+	<style name = "ControlPanelTableRows">
+		<item name="android:layout_weight">.25</item>       
+		<item name="android:weightSum">1.0</item>
+		<item name="android:layout_height">fill_parent</item>		
+	</style>
+	<style name = "ControlPanelButtons">
+		<item name="android:layout_weight">.5</item>
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:textSize">22dp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">@color/black</item>		
+	</style>
+	
+	
+</resources>

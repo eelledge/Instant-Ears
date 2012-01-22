@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="app_name">Instant Ears</string>
+    <string name="getLcoation">Get Location</string>
+    <string name="locName">Location Name</string>
+    <string name="locAddress">Address</string>
+    <string name="locPhone">Phone</string>
+    <string name="locCity_State">City &amp; State</string>
+    <string name="comments">Enter Comments</string>
+    <string name="enterComments">Enter Comments</string>
+    <string name="sendEmail">Send Email</string>
+    <string name="submit">Submit</string>
+    <string name="splashScreen">Splash Screen</string>
+    <string name="serverName">Enter Server \'s Name</string>
+    <string name="hello">Hello World, SoftwarePassionView!</string>
+    <string name="cmdServey">Survey</string> 
+    <string name="cmdRate">Rate Service</string> 
+    <string name="cmdSubmit">Submit</string> 
+    <string name="txvSurveyTitle">Survey</string> 
+    <string name="Question1">Will You Come Back to Us?</string>
+    <string name="main_no_items">No orders to display</string> 
+    <string name="cmdTimeClock">Time Clock</string>
+    <string name="cmdComm">Comm.</string>
+    <string name="cmdSpeed">Speed</string>
+<string name="cmdRealEstate">Real Estate</string>
+    <string name="cmdTDSpecial">TD Special</string>
+    <string name="cmdComments">Comments</string>
+    <string name="cmdCoupons">Coupons</string>
+    <string name="cmdImHere">I\'m Here</string>
+<string name="SurveyHeading">As our customer, your opinions are valuable to us. Please take a few minutes and answer the following questions. Thank you.</string>
+</resources>

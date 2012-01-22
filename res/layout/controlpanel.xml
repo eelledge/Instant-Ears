@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>    
+<TableLayout android:id="@+id/tblControlPanel" 
+	xmlns:android="http://schemas.android.com/apk/res/android" 
+	style="@style/LayoutTableMain" >
+    <TableRow android:id="@+id/tblRowTitle"
+    	style="@style/TitleRow">
+        <ImageView android:id="@+id/imgTitle" 
+        	style="@style/TitleCaption">
+        </ImageView>
+		<ImageView android:id="@+id/imgLogo" 
+			android:layout_column="1"
+			style="@style/TitleLogo">
+		</ImageView>		
+	</TableRow>
+	<TableRow android:id="@+id/tblRowScreenTitle" 
+		style="@style/ScreenCaptionRow">
+		<TextView android:id="@+id/txvTitleCaption" 
+			android:text="Control Panel"			
+			style="@style/ScreenCaption">
+		</TextView>
+	</TableRow>
+    <TableRow android:id="@+id/tblRow1" 
+    	style="@style/ControlPanelTableRows">
+        <Button android:id="@+id/cmdComments" 
+        	style="@style/ControlPanelButtons" 
+        	android:background="@drawable/comments" 
+        	android:clickable="true" android:onClick="cmdComments_OnClick" 
+        	android:text="@string/cmdComments" android:layout_margin="10dp">
+        </Button>
+        <Button android:id="@+id/cmdCoupons"
+        	style="@style/ControlPanelButtons" 
+        	android:background="@drawable/cupons" android:layout_margin="10dp" android:enabled="false">
+        </Button>
+    </TableRow>
+    <TableRow android:id="@+id/tblRow2" 
+    	style="@style/ControlPanelTableRows">
+        <Button android:id="@+id/cmdRealEstate"
+	        style="@style/ControlPanelButtons" 	         
+	        android:background="@drawable/reale_estate" 
+	        android:text="@string/cmdRealEstate" android:layout_margin="10dp" android:enabled="false">
+        </Button>
+        <Button android:id="@+id/cmdSurvey" 
+        	style="@style/ControlPanelButtons" 
+        	android:background="@drawable/survey" 
+        	android:text="@string/cmdServey" 
+        	android:onClick="cmdSurvey_OnClick" android:layout_margin="10dp">
+        </Button>
+    </TableRow>
+    <TableRow android:id="@+id/tblRow3" 
+    	style="@style/ControlPanelTableRows">
+        <Button android:id="@+id/cmdTimeClock" 
+        	style="@style/ControlPanelButtons" 
+        	android:background="@drawable/time_clock" 
+        	android:text="@string/cmdTimeClock" android:layout_margin="10dp" android:enabled="false">
+        </Button>
+        <Button android:id="@+id/cmdRatings" 
+        	style="@style/ControlPanelButtons" 
+        	android:background="@drawable/ratings" 
+        	android:text="@string/cmdRate" android:layout_margin="10dp" android:enabled="false">
+        </Button>
+    </TableRow>
+    <TableRow android:id="@+id/tblRow4" 
+    	style="@style/ControlPanelTableRows">
+        <Button 
+        	android:id="@+id/cmdTDSpecial" 
+        	style="@style/ControlPanelButtons" android:background="@drawable/td_special" android:layout_margin="10dp" android:enabled="false">
+        </Button>
+        <Button 
+        	android:id="@+id/cmdImHere"
+        	style="@style/ControlPanelButtons" android:background="@drawable/im_here" android:text="@string/cmdImHere" android:layout_margin="10dp" android:enabled="false">
+        </Button>
+    </TableRow>
+</TableLayout>

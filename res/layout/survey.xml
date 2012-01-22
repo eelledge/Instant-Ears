@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>    
+<TableLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/tblControlPanel" 
+	style="@style/LayoutTableMain" android:layout_height="fill_parent" android:layout_width="fill_parent">
+    <TableRow android:id="@+id/tblRowTitle"
+    	style="@style/TitleRow">
+		<TextView android:id="@+id/txvTitleCaption" style="@style/TitleCaption">
+		</TextView>
+		<ImageView android:id="@+id/imgLogo" style="@style/TitleLogo">
+		</ImageView>		
+	</TableRow>
+	<TableRow android:id="@+id/tblRowScreenTitle">
+		<TextView android:id="@+id/txvScreenCaption"
+			android:text="Survey" 
+			android:paddingBottom="5dp" 
+			style="@style/ScreenCaption">
+		</TextView>
+	</TableRow>
+    <TableRow android:id="@+id/tblRowBusinessInfo" 
+    	android:layout_marginBottom="5dp">
+        <LinearLayout android:id="@+id/linBusinessInfo" 
+        	android:layout_column="0"
+        	android:orientation="vertical" 
+        	android:layout_span="3" android:layout_weight=".75">
+            <TextView android:id="@+id/txvName" 
+            	android:layout_width="wrap_content" 
+            	android:layout_height="wrap_content" 
+            	android:text="Business Name" 
+            	style="@style/BusinessName">
+            </TextView>
+            <TextView android:id="@+id/txvAddress"
+            	android:layout_height="wrap_content" 
+            	android:layout_width="wrap_content" 
+            	android:text="Business Address" 
+            	android:textColor="@color/LightBlue" 
+            	android:textStyle="bold">
+            </TextView>
+            <TextView android:id="@+id/txvPhone" 
+            	android:layout_width="wrap_content" 
+            	android:layout_height="wrap_content" 
+            	android:text="Business Phone" 
+            	android:textColor="@color/LightBlue" 
+            	android:textStyle="bold">
+            </TextView>
+        </LinearLayout>
+        <Button android:id="@+id/cmdSubmit"			
+          	android:background="@drawable/submit" 
+        	android:layout_column="3"
+        	android:layout_gravity="right" 
+        	android:layout_marginRight="2dp">
+        </Button>        
+    </TableRow>
+    <TableRow android:id="@+id/tblRowSurveyHeading" 
+    	android:layout_height="wrap_content" 
+    	android:layout_width="fill_parent">
+        <LinearLayout android:id="@+id/linSurveyHeading" 
+        	android:layout_width="fill_parent"
+        	android:layout_span="4" 
+        	android:layout_height="wrap_content" 
+        	android:orientation="vertical">
+            <TextView android:id="@+id/txvSurveyHeading"
+	            android:text="@string/SurveyHeading" 	            
+	            android:layout_height="wrap_content" 
+	            android:layout_marginBottom="10dp" 
+	            android:layout_width="fill_parent" android:textStyle="bold" android:textSize="16dp" android:background="@drawable/shapes" android:textColor="@color/darkblue">
+            </TextView>
+        </LinearLayout>        
+    </TableRow>
+    <TableRow android:id="@+id/tblRowSurvey"
+     	android:layout_height="fill_parent" 
+    	android:layout_width="fill_parent">
+		<ScrollView android:id="@+id/scvSurvey"
+			android:layout_width="fill_parent" 
+			android:layout_span="4" 
+			android:layout_marginLeft="5dp" android:layout_height="wrap_content">
+		       <LinearLayout android:id="@+id/linSurvey"
+			       android:layout_height="fill_parent" android:orientation="vertical" android:layout_width="fill_parent">
+		           <TextView android:id="@+id/txvSurveyQ1"
+			           android:text="1. How would you rate the taste of your meal?" 
+			           android:layout_height="fill_parent" android:layout_width="wrap_content" android:textStyle="bold" android:textSize="16dp" android:textColor="@color/LightBlue">
+		           </TextView>
+		           <RatingBar android:paddingBottom="5dp" android:id="@+id/ratingBar1" android:layout_height="wrap_content" android:layout_width="wrap_content"></RatingBar>
+		           <TextView android:id="@+id/txvSurveyQ2" 
+			           android:text="2. Was the server attentive and available when you  needed him/her?" android:layout_height="fill_parent" android:layout_width="fill_parent" android:textSize="16dp" android:textStyle="bold" android:textColor="@color/LightBlue">
+		           </TextView>
+		           <RatingBar android:id="@+id/ratingBar2"
+			           	android:paddingBottom="5dp" 
+			           	android:layout_height="wrap_content" 
+			           	android:layout_width="wrap_content">
+		           	</RatingBar>
+		           <TextView android:id="@+id/txvSurveyQ3"
+			           android:layout_height="wrap_content" 
+			           android:layout_width="wrap_content" android:text="3. Please rate your visit on value for the money" android:textColor="@color/LightBlue" android:textSize="16dp" android:textStyle="bold">
+		           </TextView>
+		           <RatingBar android:id="@+id/ratingBar3"
+			           	android:paddingBottom="5dp" 
+			           	android:layout_height="wrap_content" 
+			           	android:layout_width="wrap_content">
+			       </RatingBar>
+		           <TextView android:id="@+id/txvSurveyQ4"
+			           android:layout_height="wrap_content" 
+			           android:layout_width="wrap_content" android:text="4. How often do you dine with us ?" android:textStyle="bold" android:textSize="16dp" android:textColor="@color/LightBlue">
+		           </TextView>
+		           <RadioGroup android:layout_height="wrap_content" android:id="@+id/radioGroup1" android:layout_width="wrap_content">
+		               <RadioButton android:layout_height="wrap_content" android:id="@+id/radio0" android:layout_width="wrap_content" android:checked="false" android:text=" First Time" style="@style/RadioButton"></RadioButton>
+		               <RadioButton android:layout_height="wrap_content" android:id="@+id/radio1" android:layout_width="wrap_content" android:text="Weekly" style="@style/RadioButton"></RadioButton>
+		               <RadioButton android:layout_height="wrap_content" android:id="@+id/radio2" android:layout_width="wrap_content" android:text="Monthly" style="@style/RadioButton"></RadioButton>
+		           </RadioGroup>
+		           <Button android:textStyle="bold" android:textColor="@color/darkblue" android:id="@+id/cmdMoreSurvey" android:text="Click here if you will answer more questions" android:textSize="16dp" android:layout_height="wrap_content" android:layout_width="fill_parent"></Button>
+		       </LinearLayout>
+		</ScrollView>
+    </TableRow>
+</TableLayout>
