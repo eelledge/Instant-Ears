@@ -1,6 +1,11 @@
+import net.clkus.InstantEars.Globals;
+import net.clkus.InstantEars.Globals.Screens;
+
 
 public class Business 
 {
+	private static Business _Instance;
+	
 	private int ID;
 	private int reviewCount;
 	private double userRating;
@@ -18,7 +23,16 @@ public class Business
 	
 	public Business()
 	{		
-		
+		_Instance = null;
+	}
+	
+	public static synchronized Business getInstance()
+	{
+		if(null==_Instance)
+		{
+			_Instance = new Business();
+		}
+		return _Instance;
 	}
 	
 	public int getID() 

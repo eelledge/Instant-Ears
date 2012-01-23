@@ -14,6 +14,8 @@ import android.widget.TextView;
 public class Comments  extends Activity
 {
 	Globals globals = Globals.getInstance();
+	Business business = Business.getInstance();
+	
 	String LDT = "XOOM";
 	String LocID;
 	ImageView imgLogo;
@@ -33,9 +35,14 @@ public class Comments  extends Activity
     	txtServerName = (EditText)this.findViewById(R.id.txtServerName);
     	txtComments = (EditText)this.findViewById(R.id.txtComments);
     	globals.setCurrentScreen(Screens.Comments);
-    	txtName.setText(globals.getLocationName());
+    	txtName.setText(business.getName());
     }
     
+    /* This is to test the Fetch
+     * I hope this works.
+     * I really need it to work
+     * 
+     */
     public void imgLogo_OnClick(View view)
 	{
 		try

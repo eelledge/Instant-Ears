@@ -6,16 +6,18 @@ import android.util.Log;
 
 public class PhonebookEntry 
 {
+	private int peReviewCount;
 	private String peBusinessName;
 	private String pePhoneNumber;
 	private String peAddress;
 	private String peCity;
 	private String peState;
 	private String peZipCode;
+	private String peDisplayUrl;
+	private String peUrl;
 	private double peLatitude;
 	private double peLongitude;
 	private double peUserRating;
-	private int peReviewCount;
 	
 	public PhonebookEntry(JSONObject entry)
 	{
@@ -31,6 +33,8 @@ public class PhonebookEntry
 			peLongitude = entry.getDouble("Longitude");
 			peReviewCount = entry.optInt("ReviewCount",0);
 			peUserRating = entry.optDouble("UserRating",0);
+			peDisplayUrl = entry.getString("DisplayUrl");
+			peDisplayUrl = entry.getString("Url");
 			
 			Log.i("XOOM", entry.toString());
 		}

@@ -14,8 +14,9 @@ import android.widget.TextView;
 
 public class LocationsList extends Activity
 {
+	Business business = Business.getInstance();
 	Globals globals = Globals.getInstance();
-		
+	
 	ListView lstLocations;	
 	String LDT = "XOOM";
 	
@@ -41,9 +42,9 @@ public class LocationsList extends Activity
 				TextView address = (TextView)arg1.findViewById(R.id.txtAddress);
 				TextView phone = (TextView)arg1.findViewById(R.id.txtPhone);
 				
-				globals.setLocationName((String)name.getText());
-				globals.setLocationAddress((String)address.getText());
-				globals.setLocationPhone((String)phone.getText());
+				business.setName((String)name.getText());
+				business.setAddress1((String)address.getText());
+				business.setPhoneNumber((String)phone.getText());
 				GotoScreen(globals.getNextScreen(), arg1.getRootView());			
 			}    		
     	});

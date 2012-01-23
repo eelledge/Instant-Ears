@@ -117,7 +117,5 @@ public class Globals
 	{
 		return nxtScreen;
 	}
-
-	
 }
 
