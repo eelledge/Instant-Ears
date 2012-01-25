@@ -38,11 +38,6 @@ public class Comments  extends Activity
     	txtName.setText(business.getName());
     }
     
-    /* This is to test the Fetch
-     * I hope this works.
-     * I really need it to work
-     * 
-     */
     public void imgLogo_OnClick(View view)
 	{
 		try

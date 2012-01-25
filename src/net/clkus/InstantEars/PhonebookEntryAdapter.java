@@ -48,7 +48,7 @@ class PhonebookEntryAdapter extends ArrayAdapter<PhonebookEntry>
 				 }
 				 if(txtAddress != null)
 				 {
-					 txtAddress.setText("" + o.GetAddress());
+					 txtAddress.setText("" + o.GetAddress());					 
 				 }
 				 if(txtPhone != null)
 				 {

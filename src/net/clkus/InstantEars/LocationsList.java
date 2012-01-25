@@ -41,10 +41,7 @@ public class LocationsList extends Activity
 				TextView name = (TextView)arg1.findViewById(R.id.txtName);				
 				TextView address = (TextView)arg1.findViewById(R.id.txtAddress);
 				TextView phone = (TextView)arg1.findViewById(R.id.txtPhone);
-				
 				business.setName((String)name.getText());
-				business.setAddress1((String)address.getText());
-				business.setPhoneNumber((String)phone.getText());
 				GotoScreen(globals.getNextScreen(), arg1.getRootView());			
 			}    		
     	});
