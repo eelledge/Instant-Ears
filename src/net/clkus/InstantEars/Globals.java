@@ -48,6 +48,7 @@ public class Globals
 	{
 		appContext = applicationContext;
 	}
+	
 	public Context getAppContext()
 	{
 		return appContext;
@@ -57,6 +58,7 @@ public class Globals
 	{
 		showSplashScreen = show;
 	}
+	
 	public boolean getShowSplashScreen()
 	{
 		return showSplashScreen;
@@ -67,6 +69,7 @@ public class Globals
 	{
 		curName = name;		
 	}
+	
 	public String getLocationName()
 	{
 		return curName;
@@ -76,6 +79,7 @@ public class Globals
 	{
 		curAddress = address;
 	}
+	
 	public String getLocationAddtress()
 	{
 		return curAddress;
@@ -85,6 +89,7 @@ public class Globals
 	{
 		curPhone = phone;
 	}
+	
 	public String getLocationPhone()
 	{
 		return curPhone;
@@ -95,6 +100,7 @@ public class Globals
 	{
 		prevScreen = previousScreen;
 	}
+	
 	public Screens getPreviousScreen()
 	{
 		return prevScreen;
@@ -104,6 +110,7 @@ public class Globals
 	{
 		currScreen = currentScreen;
 	}
+	
 	public Screens getCurrentScreen()
 	{
 		return currScreen;
@@ -116,6 +123,11 @@ public class Globals
 	public Screens getNextScreen()
 	{
 		return nxtScreen;
+	}
+	
+	public void setCurLot(double Lon)
+	{
+		    
 	}
 }
 

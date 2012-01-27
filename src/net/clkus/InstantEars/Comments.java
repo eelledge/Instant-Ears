@@ -52,6 +52,10 @@ public class Comments  extends Activity
 		{
 			Log.i("XOOM",ex.getMessage());
 		}
+		finally
+		{
+			Clear();
+		}
 	}
     
     public void cmdSubmit_OnClick(View view)
@@ -63,7 +67,7 @@ public class Comments  extends Activity
     		Results = PostComment("1",globals.getLocationName(), globals.getLocationAddtress(), 
     				this.txtServerName.getText().toString(),
     				this.txtComments.getText().toString());
-    		
+    		Clear();
     		Log.i(LDT, "Starting ControlPanel");
 		   	Intent ControlPanel = new Intent(view.getContext(),ControlPanel.class);
 	    	Log.i(LDT, "Starting ControlPanel - Intent is Set");
@@ -74,9 +78,17 @@ public class Comments  extends Activity
 		{
 			Log.i("XOOM",ex.getMessage());
 		}
-		Log.i("Xoom",Results);
+		finally
+		{
+			Clear();
+			Log.i("Xoom",Results);
+		}
     }
-    
+    private void Clear()
+    {
+    	this.txtComments.setText("");
+    	this.txtServerName.setText("");
+    }
     @Override    
     protected void onResume()
     {

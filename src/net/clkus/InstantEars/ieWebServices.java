@@ -26,7 +26,7 @@ public class ieWebServices
                 + "&UILanguage=en"
                 + "&Latitude=" + cords.GetLatitude()
                 + "&Longitude=" + cords.GetLongitude()
-                + "&Radius=1.0"
+                + "&Radius=1"
                 + "&Options=EnableHighlighting"
 
                 // Phonebook-specific request fields (optional)

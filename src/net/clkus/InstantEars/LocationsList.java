@@ -43,6 +43,7 @@ public class LocationsList extends Activity
 				TextView phone = (TextView)arg1.findViewById(R.id.txtPhone);
 				business.setName((String)name.getText());
 				GotoScreen(globals.getNextScreen(), arg1.getRootView());			
+			
 			}    		
     	});
 		
@@ -70,6 +71,7 @@ public class LocationsList extends Activity
     	default:
     		curActivity = new Intent(view.getContext(),ControlPanel.class);    		
     	}    	
+    	gps.StopListener();
     	startActivityForResult(curActivity,0);
     }
 }

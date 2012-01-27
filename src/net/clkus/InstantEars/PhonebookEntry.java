@@ -34,7 +34,7 @@ public class PhonebookEntry
 			peReviewCount = entry.optInt("ReviewCount",0);
 			peUserRating = entry.optDouble("UserRating",0);
 			peDisplayUrl = entry.getString("DisplayUrl");
-			peDisplayUrl = entry.getString("Url");
+			peUrl = entry.getString("Url");
 			
 			Log.i("XOOM", entry.toString());
 		}
@@ -42,6 +42,16 @@ public class PhonebookEntry
 		{
 			Log.e("XOOM", "JSON Error - " + e1.toString());
 		}
+	}
+	
+	public String GetDisplayUrl()
+	{
+		return peDisplayUrl;
+	}
+	
+	public String GetUrl()
+	{
+		return peUrl;
 	}
 	
 	public String GetBusinessName()
