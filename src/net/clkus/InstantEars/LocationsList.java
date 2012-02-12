@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 public class LocationsList extends Activity
 {
-	Business business = Business.getInstance();
 	Globals globals = Globals.getInstance();
 	
 	ListView lstLocations;	
@@ -22,7 +21,7 @@ public class LocationsList extends Activity
 	
 	Cordinance cords;
 	GPS_Services gps;
-	PhonebookEntries phonebookEntries;
+	
 	ArrayList<PhonebookEntry> entries;
 	PhonebookEntryAdapter adapter;
 	
@@ -41,17 +40,16 @@ public class LocationsList extends Activity
 				TextView name = (TextView)arg1.findViewById(R.id.txtName);				
 				TextView address = (TextView)arg1.findViewById(R.id.txtAddress);
 				TextView phone = (TextView)arg1.findViewById(R.id.txtPhone);
-				business.setName((String)name.getText());
-				GotoScreen(globals.getNextScreen(), arg1.getRootView());			
-			
+				globals.setLocationIndex(arg2);
+				GotoScreen(globals.getNextScreen(), arg1.getRootView());
 			}    		
     	});
 		
 		gps = new GPS_Services(globals.getAppContext());
 		gps.StartListener(50000, 0);		
 		cords = new Cordinance(gps.latitude,gps.longitude);	
-		phonebookEntries = new PhonebookEntries(cords);	
-		entries = phonebookEntries.GetPhonebookEntries();
+		PhonebookEntries.getInstance().GetEntries(cords);
+		entries = PhonebookEntries.getInstance().GetPhonebookEntries();
 		
 		adapter = new PhonebookEntryAdapter(entries);
 		lstLocations.setAdapter(adapter);
@@ -59,7 +57,8 @@ public class LocationsList extends Activity
 	
 	private void GotoScreen(Globals.Screens screen, View view)
     {
-    	Intent curActivity;
+		gps.StopListener();
+		Intent curActivity;
     	switch (screen)
     	{
     	case Comments:
@@ -71,7 +70,6 @@ public class LocationsList extends Activity
     	default:
     		curActivity = new Intent(view.getContext(),ControlPanel.class);    		
     	}    	
-    	gps.StopListener();
     	startActivityForResult(curActivity,0);
     }
 }

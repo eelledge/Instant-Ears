@@ -1,5 +1,9 @@
 package net.clkus.InstantEars;
 
+import org.apache.http.entity.StringEntity;
+import com.google.*;
+import com.google.gson.JsonObject;
+
 import net.clkus.InstantEars.Globals.Screens;
 import android.app.Activity;
 import android.content.Intent;
@@ -14,8 +18,7 @@ import android.widget.TextView;
 public class Comments  extends Activity
 {
 	Globals globals = Globals.getInstance();
-	Business business = Business.getInstance();
-	
+	PhonebookEntry entry;
 	String LDT = "XOOM";
 	String LocID;
 	ImageView imgLogo;
@@ -35,7 +38,10 @@ public class Comments  extends Activity
     	txtServerName = (EditText)this.findViewById(R.id.txtServerName);
     	txtComments = (EditText)this.findViewById(R.id.txtComments);
     	globals.setCurrentScreen(Screens.Comments);
-    	txtName.setText(business.getName());
+    	entry = PhonebookEntries.getInstance().GetEntryByID(globals.getLocationIndex());
+    	txtName.setText(entry.GetBusinessName());
+    	Log.i("XOOM",PhonebookEntries.getInstance().ConvertEntry2Json(Globals.getInstance().getLocationIndex() ) );
+    	
     }
     
     public void imgLogo_OnClick(View view)
@@ -64,9 +70,11 @@ public class Comments  extends Activity
     	try
 		{
     		Log.i(LDT, "Post to WebService");
-    		Results = PostComment("1",globals.getLocationName(), globals.getLocationAddtress(), 
+    		Results = PostComment("1",entry.GetBusinessName(), entry.GetAddress(), 
     				this.txtServerName.getText().toString(),
     				this.txtComments.getText().toString());
+    		//PostBusiness();
+    		
     		Clear();
     		Log.i(LDT, "Starting ControlPanel");
 		   	Intent ControlPanel = new Intent(view.getContext(),ControlPanel.class);
@@ -101,6 +109,7 @@ public class Comments  extends Activity
     protected void onPause()
     {
     	super.onResume();
+    	
     	globals.setCurrentScreen(Screens.Comments);
     	Log.i(LDT,"Comments OnPause");
     }
@@ -112,11 +121,12 @@ public class Comments  extends Activity
     	globals.setPreviousScreen(Screens.Comments);
     	Log.i(LDT,"Comments OnStop");
     }
-        
+    
+    
     private String PostComment(String LocID, String Establishment, String Address, 
     		String ServerName, String Comment)
     {
-    	String Uri = "http://instant1.w04.winhost.com/webservices/GPS_Location.svc/PostComment/"; 
+    	String Uri = "http://instant1.w04.winhost.com/ieSevices/ServiceProviders.svc/PostComment/"; 
     	String result;
     	try        
          { 

@@ -6,9 +6,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import android.util.Log;
+import com.google.gson.Gson;
 
 public class PhonebookEntries
 {
+	private static PhonebookEntries _Instance;
+	
 	private Cordinance _cordinance;
 	private ieWebServices webServices;
 	private String PhonebookResults = null;
@@ -16,14 +19,21 @@ public class PhonebookEntries
 	private JSONObject results = null;
 	private JSONObject phoneBook = null;
 	private ArrayList<PhonebookEntry> phonebookEntries;
-	
-	
-	public PhonebookEntries(Cordinance cords)
+		
+	public PhonebookEntries()
 	{
-		_cordinance = cords;
+		_Instance = null;
 		webServices = new ieWebServices();		
-		Log.i("XOOM", "Step 1 - Getting Entries");
-		GetEntries();
+		Log.i("XOOM", "Set Instance");		
+	}
+	
+	public static synchronized PhonebookEntries getInstance()
+	{
+		if(null==_Instance)
+		{
+			_Instance = new PhonebookEntries();
+		}
+		return _Instance;
 	}
 	
 	public ArrayList<PhonebookEntry>GetPhonebookEntries()
@@ -31,8 +41,9 @@ public class PhonebookEntries
 		return phonebookEntries;
 	}
 	
-	private void GetEntries()
+	public void GetEntries(Cordinance cords)
 	{
+		_cordinance = cords;
 		Log.i("XOOM", "Step 2 - Call web service");
 		PhonebookResults = webServices.GetPhonebook(_cordinance);		
 		Log.i("XOOM", "Step 6 - Completed Web Service. Setting up Phonebook Entries");
@@ -54,6 +65,7 @@ public class PhonebookEntries
 		{
 			JSONArray jArray = phoneBook.getJSONArray("Results");
 			Log.i("XOOM", "Setting up Collection");
+			phonebookEntries.clear();
 			for(int i = 0; i <jArray.length(); i++)
 			{
 				phonebookEntries.add(new PhonebookEntry(jArray.getJSONObject(i)));
@@ -63,5 +75,18 @@ public class PhonebookEntries
 		{
 			Log.i("XOOM", "Error parsing data "+e.toString());
 		}			
+	}
+
+	public PhonebookEntry GetEntryByID(int ID)
+	{
+		return phonebookEntries.get(ID);
+	}
+	public String ConvertEntry2Json(int ID)
+	{
+		PhonebookEntry entry = phonebookEntries.get(ID);
+		Gson gson = new Gson();
+		
+		return gson.toJson(entry);
+		
 	}
 }

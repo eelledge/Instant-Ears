@@ -18,9 +18,7 @@ public class Globals
 	private Context appContext;
 	
 	//Location Information
-	private String curName = "";
-	private String curAddress = "";
-	private String curPhone = "";
+	private int locationIndex = 0;
 	
 	protected Globals()
 	{
@@ -65,34 +63,14 @@ public class Globals
 	}
 	
 	//Location Information Properties
-	public void setLocationName(String name)
+	public void setLocationIndex(int LocationIndex)
 	{
-		curName = name;		
+		locationIndex = LocationIndex;		
 	}
 	
-	public String getLocationName()
+	public int getLocationIndex()
 	{
-		return curName;
-	}
-	
-	public void setLocationAddress(String address)
-	{
-		curAddress = address;
-	}
-	
-	public String getLocationAddtress()
-	{
-		return curAddress;
-	}
-	
-	public void setLocationPhone(String phone)
-	{
-		curPhone = phone;
-	}
-	
-	public String getLocationPhone()
-	{
-		return curPhone;
+		return locationIndex;
 	}
 	
 	//Screen Information Properties

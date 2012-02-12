@@ -43,7 +43,7 @@ public class Main extends Activity //implements LocationListener
     	InitializeUI();
     	
 		cords = new Cordinance(gps.latitude,gps.longitude);
-		phonebookEntries = new PhonebookEntries(cords);	
+		//phonebookEntries = new PhonebookEntries(cords);	
 		entries = phonebookEntries.GetPhonebookEntries();
 		adapter = new PhonebookEntryAdapter(entries);
 		lstBusiness.setAdapter(adapter);
@@ -100,7 +100,7 @@ public class Main extends Activity //implements LocationListener
 				showToastMessage("New Location");
 				// TODO Auto-generated method stub
 				cords = new Cordinance(gps.latitude,gps.longitude);
-	    		phonebookEntries = new PhonebookEntries(cords);	
+	    		//phonebookEntries = new PhonebookEntries(cords);	
 	    		entries = phonebookEntries.GetPhonebookEntries();
 	    		adapter = new PhonebookEntryAdapter(entries);
 	    		//lstBusiness.setAdapter(adapter);

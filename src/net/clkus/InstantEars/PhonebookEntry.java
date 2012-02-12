@@ -7,6 +7,7 @@ import android.util.Log;
 public class PhonebookEntry 
 {
 	private int peReviewCount;
+	private String peBingUniqueId;
 	private String peBusinessName;
 	private String pePhoneNumber;
 	private String peAddress;
@@ -23,6 +24,7 @@ public class PhonebookEntry
 	{
 		try
 		{
+			peBingUniqueId = entry.getString("UniqueId");
 			peBusinessName = entry.getString("Business");
 			pePhoneNumber = entry.getString("PhoneNumber");
 			peAddress = entry.getString("Address");
@@ -42,6 +44,11 @@ public class PhonebookEntry
 		{
 			Log.e("XOOM", "JSON Error - " + e1.toString());
 		}
+	}
+	
+	public String GetBingUniqueId()
+	{
+		return peBingUniqueId;
 	}
 	
 	public String GetDisplayUrl()
@@ -98,6 +105,7 @@ public class PhonebookEntry
 	{
 		return peUserRating;
 	}
+	
 	public int GetReviewCount()
 	{
 		return peReviewCount;
