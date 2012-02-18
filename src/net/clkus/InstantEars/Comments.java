@@ -130,10 +130,9 @@ public class Comments  extends Activity
     	String result;
     	try        
          { 
-    		Uri = Uri + LocID.trim() + "/" + Establishment + "/" + Address + "/" + ServerName + "/" + Comment + "/";
-    		Log.i("XOOM", LocID.trim());
+    		Uri = Uri + "1/" + Establishment + "/" + Address + "/" + ServerName + "/" + Comment + "/";
     		//@SuppressWarnings("static-access")    		
-			Log.i("XOOM",Uri);
+			Log.i("XOOM","Requesting URI -> " + Uri);
 			RestClient client = new RestClient(Uri.replace(" ", "%20"));
         	Log.i("XOOM", "Calling PostComment Service" );
         	client.Execute(RequestMethod.GET);
